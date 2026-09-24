@@ -1,4 +1,4 @@
-# Gym Lead Generation Website
+# Gym Lead Generation Website-Low-cost architecture
 
 <img width="500" height="400" alt="Screenshot1" src="https://github.com/user-attachments/assets/cd0f8752-9878-4b3e-aefa-c477ba50ffc0" />
 <img width="500" height="400" alt="Screenshot3" src="https://github.com/user-attachments/assets/0db989ef-2d93-436a-aa19-5ac4855f92aa" />
@@ -6,216 +6,363 @@
 <img width="500" height="400" alt="Screenshot2" src="https://github.com/user-attachments/assets/684671c9-b2f9-47bd-aec7-272fd274b5de" />
 
 
-A lead-generation website built for a gym to help convert website visitors into potential customers.
+A lead-generation website built for a gym that allows potential customers to submit their details through a **Join Now** form.
 
-The website provides information about the gym and allows interested visitors to submit their details through a lead form. Submitted leads are automatically captured in a **Google Sheet**, giving the gym an easy way to manage and follow up with potential customers.
+Every submitted lead is automatically:
+
+1. Saved as a new row in **Google Sheets**
+2. Sent as an instant **WhatsApp notification**
+
+This provides the gym with a simple, low-cost system for capturing and responding to new customer enquiries.
+
+---
 
 ## Problem
 
-Many local gyms depend on walk-ins, phone calls, social media, or manually collected customer information to generate new memberships.
+A gym website can attract potential customers, but simply displaying information does not guarantee that the gym captures those potential customers as leads.
 
-This creates several problems:
+Without a structured lead-capture system:
 
-* Website visitors may leave without contacting the gym
-* Lead information can be lost
-* Staff may need to manually record enquiries
-* Following up with potential customers becomes difficult
-* There may be no simple centralized place to track incoming leads
+* Website enquiries can be missed
+* Customer information may need to be recorded manually
+* Staff may not know immediately when a new enquiry arrives
+* Following up with potential members becomes harder
+* A small gym may not want to pay for an expensive CRM or lead-management platform
 
 ### Problem Statement
 
-> **How can a local gym turn website visitors into structured leads and make it easier for staff to follow up with potential customers?**
+> **How can a local gym turn website visitors into actionable leads and notify the gym immediately when someone is interested?**
 
-## Solution
+---
 
-The website provides a simple digital lead-generation process.
+# Solution
 
-A visitor can learn about the gym and submit their information through a lead form.
-
-The submitted information is automatically sent to a **Google Sheet**, creating a simple lead-management workflow without requiring a complex CRM.
-
-### Lead Flow
+The website combines **lead capture, Google Sheets, and WhatsApp notifications** into one simple workflow.
 
 ```text
-Website Visitor
-       ↓
-   Gym Website
-       ↓
-    Lead Form
-       ↓
-  Form Submission
-       ↓
-   Google Sheet
-       ↓
-  Gym Staff Reviews Lead
-       ↓
-     Follow-up
-       ↓
- Potential Membership
+                Website Visitor
+                      ↓
+                 Join Now
+                      ↓
+                  Lead Form
+                      ↓
+             ┌────────┴────────┐
+             ↓                 ↓
+      Google Sheets        WhatsApp
+        Lead Record         Alert
+             ↓                 ↓
+       Lead Management     Immediate
+                           Follow-up
 ```
 
-## Key Features
+Instead of requiring the gym to manually collect enquiries, each form submission automatically creates a structured lead record.
 
-### Gym Information
+---
 
-The website can showcase:
+# Lead Capture Workflow
 
-* Gym facilities
-* Training programs
-* Membership information
-* Trainers
-* Opening hours
-* Contact information
-* Location
+When a visitor submits the form, the following information is captured:
 
-### Lead Generation Form
-
-Interested visitors can submit details such as:
-
-* Name
-* Phone number
+* Timestamp
+* First Name
+* Last Name
+* Phone
 * Email
-* Fitness goal
-* Preferred program
-* Other relevant information
+* Source
 
-### Automatic Lead Capture
-
-After submitting the form, lead information is recorded in a Google Sheet.
+The information is added to a Google Sheet.
 
 Example:
 
-| Name  | Phone      | Email                                         | Goal        | Date       |
-| ----- | ---------- | --------------------------------------------- | ----------- | ---------- |
-| Rahul | 9876543210 | [rahul@example.com](mailto:rahul@example.com) | Weight Loss | 2026-09-24 |
-| Priya | 9876543211 | [priya@example.com](mailto:priya@example.com) | Strength    | 2026-09-24 |
+| Timestamp  | First Name | Last Name | Phone           | Email                                         | Source  |
+| ---------- | ---------- | --------- | --------------- | --------------------------------------------- | ------- |
+| 07/03/2026 | Arjun      | Sharma    | +91 98765 43210 | [arjun@example.com](mailto:arjun@example.com) | Website |
 
-This gives the gym staff a centralized list of potential customers.
+---
 
-## Business Value
+# Instant WhatsApp Notification
 
-The website is designed not just as an informational website, but as a **lead-generation system**.
+After a lead is submitted, the gym owner can receive a WhatsApp notification through **CallMeBot**.
 
-```text
-Website Traffic
-      ↓
-Interested Visitors
-      ↓
-Lead Form
-      ↓
-Structured Leads
-      ↓
-Follow-up
-      ↓
-Membership Opportunities
-```
-
-The Google Sheet provides a simple and low-cost way for a small gym to start managing leads without purchasing a dedicated CRM.
-
-## Product Insight
-
-The key product idea is:
-
-> **A business website should not only provide information; it should help the business capture and act on customer interest.**
-
-Instead of ending the customer journey at:
+Example:
 
 ```text
-Visitor → Website → Leave
+🏋️ NEW GYM LEAD!
+
+Name: Arjun Sharma
+Phone: +91 98765 43210
+Email: arjun@example.com
+Time: 07/03/2026, 3:42:10 PM
 ```
 
-the system creates:
+This allows the gym to know about a new enquiry without constantly checking the Google Sheet.
+
+---
+
+# Business Workflow
+
+The complete customer journey is:
 
 ```text
-Visitor → Website → Lead Form → Google Sheet → Follow-up
+Potential Customer
+        ↓
+Visits Gym Website
+        ↓
+Interested in Joining
+        ↓
+Clicks "Join Now"
+        ↓
+Submits Details
+        ↓
+Google Sheet Updated
+        ↓
+WhatsApp Alert Sent
+        ↓
+Gym Contacts Lead
+        ↓
+Trial / Visit
+        ↓
+Potential Membership
 ```
 
-## Technology
+The website therefore acts as more than an informational website.
 
-Depending on the implementation, the project can use:
+It functions as a **basic lead-generation system for the gym**.
+
+---
+
+# Why Google Sheets?
+
+Google Sheets provides a simple and accessible way for a small business to manage leads.
+
+The gym does not need to purchase or maintain a dedicated CRM just to start collecting enquiries.
+
+The owner can:
+
+* View all leads
+* Sort leads
+* Filter leads
+* Track incoming enquiries
+* Share the sheet with authorized staff
+* Use the information for follow-up
+
+---
+
+# Why WhatsApp Notifications?
+
+Saving a lead is useful, but **speed of follow-up can also matter**.
+
+The WhatsApp notification creates an immediate signal when a new lead arrives.
+
+```text
+Lead Submitted
+      ↓
+Google Sheet
+      +
+WhatsApp Alert
+      ↓
+Gym Staff
+      ↓
+Fast Follow-up
+```
+
+This reduces the need for staff to continuously monitor the spreadsheet.
+
+---
+
+# Cost-Conscious Design
+
+The system was designed around the needs of a small/local business.
+
+Instead of introducing an expensive CRM or complex infrastructure, the solution uses:
+
+* Google account
+* Google Sheets
+* Google Apps Script
+* WhatsApp
+* CallMeBot
+
+The objective is to provide useful lead-management functionality while keeping the operating cost extremely low.
+
+> **The system demonstrates how simple, low-cost services can be combined to solve a real business problem.**
+
+---
+
+# Technology
+
+### Frontend
 
 * HTML
 * CSS
 * JavaScript
-* Google Sheets
-* Google Apps Script / Google Sheets integration
 
-## Architecture
+### Lead Storage
+
+* Google Sheets
+
+### Automation
+
+* Google Apps Script
+
+### Notifications
+
+* WhatsApp
+* CallMeBot
+
+---
+
+# Architecture
 
 ```text
-┌─────────────────────┐
-│     Website User    │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│    Gym Website      │
-│                     │
-│   Lead Generation   │
-│        Form         │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│ Form Submission     │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│    Google Sheets    │
-│                     │
-│   Lead Database     │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│     Gym Staff       │
-│                     │
-│ Follow-up / Contact │
-└─────────────────────┘
+┌───────────────────────────┐
+│       Website Visitor     │
+└─────────────┬─────────────┘
+              │
+              ▼
+┌───────────────────────────┐
+│       Gym Website         │
+│                           │
+│       Join Now Form       │
+└─────────────┬─────────────┘
+              │
+              ▼
+┌───────────────────────────┐
+│       JavaScript          │
+│         join.js            │
+└─────────────┬─────────────┘
+              │
+       ┌──────┴──────┐
+       │             │
+       ▼             ▼
+┌────────────┐  ┌──────────────┐
+│   Google   │  │  CallMeBot   │
+│ Apps Script│  │  WhatsApp    │
+└─────┬──────┘  └──────┬───────┘
+      │                │
+      ▼                ▼
+┌────────────┐   ┌──────────────┐
+│   Google   │   │     Gym      │
+│   Sheets   │   │     Owner    │
+└────────────┘   └──────────────┘
 ```
 
-## Why Google Sheets?
+---
 
-For a small local business, Google Sheets provides a simple starting point for lead management.
+# Google Sheets Integration
 
-It allows the gym to:
+Google Apps Script receives the submitted lead information and appends it as a new row.
 
-* View incoming leads
-* Sort and filter leads
-* Track follow-ups
-* Share the lead list with staff
-* Avoid maintaining a separate database initially
+The sheet structure is:
 
-## Future Improvements
+```text
+A: Timestamp
+B: First Name
+C: Last Name
+D: Phone
+E: Email
+F: Source
+```
 
-The system can be expanded into a complete gym lead-management platform.
+This creates a simple structured lead database using Google Sheets.
 
-Potential improvements:
+---
 
-* Lead status: New / Contacted / Converted / Lost
-* Automatic WhatsApp notifications
+# Setup
+
+The project requires:
+
+### Google Sheets
+
+Create a Google Sheet and add:
+
+```text
+Timestamp | First Name | Last Name | Phone | Email | Source
+```
+
+### Google Apps Script
+
+The Apps Script is deployed as a Web App.
+
+The generated Web App URL is configured in:
+
+```text
+js/join.js
+```
+
+Example:
+
+```javascript
+const SHEET_URL = 'YOUR_GOOGLE_SCRIPT_URL';
+```
+
+### WhatsApp
+
+CallMeBot can be configured with:
+
+```javascript
+const WA_NUMBER = 'YOUR_WHATSAPP_NUMBER';
+const WA_APIKEY = 'YOUR_API_KEY';
+```
+
+**API keys and private credentials should never be committed to GitHub.**
+
+---
+
+# Business Value
+
+The project solves a simple but real business problem:
+
+```text
+Website Traffic
+      ↓
+Customer Interest
+      ↓
+Lead Capture
+      ↓
+Lead Storage
+      ↓
+Instant Notification
+      ↓
+Sales Follow-up
+```
+
+For a local gym, this creates a bridge between **online marketing and customer acquisition**.
+
+The website is therefore not only a digital brochure; it becomes part of the gym's lead-generation process.
+
+---
+
+# Future Improvements
+
+The current system can be expanded into a complete lightweight gym CRM.
+
+Potential improvements include:
+
+* Lead status tracking
+* New / Contacted / Interested / Converted / Lost
+* Automatic follow-up reminders
+* WhatsApp follow-up messages
 * Email notifications
-* Follow-up reminders
-* Dashboard showing lead conversion
-* Lead source tracking
-* Membership conversion tracking
-* Automated follow-up messages
-* CRM integration
-* Analytics for website visitors and leads
+* Lead conversion dashboard
+* Membership tracking
+* Trial-session scheduling
+* Lead source analytics
+* Google Analytics integration
+* Admin dashboard
+* Automated lead assignment to staff
 
-### Future Workflow
+Future architecture:
 
 ```text
 Website
    ↓
 Lead
    ↓
-Google Sheets / CRM
+Lead Management
    ↓
-Automatic Notification
+Notification
    ↓
-Sales Follow-up
+Follow-up
    ↓
 Trial Session
    ↓
@@ -224,12 +371,24 @@ Membership
 Revenue
 ```
 
-## Project Goal
+---
 
-The goal of this project was to build a practical website that solves a real business problem:
+# Project Outcome
 
-> **Help a local gym capture potential customers from its website and organize those enquiries in a simple, accessible system.**
+The project demonstrates how a simple website can be transformed into a practical **business lead-generation system** using existing cloud services.
 
-The project demonstrates the connection between:
+### Core Idea
 
-**Website → Lead Generation → Data Collection → Business Follow-up**
+> **Capture every interested visitor, store the lead automatically, and notify the gym immediately so the business can follow up.**
+
+---
+
+
+A practical gym lead-generation solution combining:
+
+* ✅ Responsive website
+* ✅ Online lead form
+* ✅ Automatic Google Sheets lead capture
+* ✅ WhatsApp lead notifications
+* ✅ Low-cost architecture
+* ✅ Simple lead-management workflow
