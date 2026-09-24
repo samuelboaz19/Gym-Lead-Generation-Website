@@ -1,9 +1,9 @@
 # Gym Lead Generation Website
 
-<img width="500" height="400" alt="Screenshot1" src="https://github.com/user-attachments/assets/cd0f8752-9878-4b3e-aefa-c477ba50ffc0" />
-<img width="500" height="600" alt="Screenshot3" src="https://github.com/user-attachments/assets/0db989ef-2d93-436a-aa19-5ac4855f92aa" />
-<img width="500" height="600" alt="Screenshot 4" src="https://github.com/user-attachments/assets/da8db353-d96f-4f78-88ad-3be38aa2c8a5" />
-<img width="500" height="600" alt="Screenshot2" src="https://github.com/user-attachments/assets/684671c9-b2f9-47bd-aec7-272fd274b5de" />
+<img width="600" height="400" alt="Screenshot1" src="https://github.com/user-attachments/assets/cd0f8752-9878-4b3e-aefa-c477ba50ffc0" />
+<img width="600" height="400" alt="Screenshot3" src="https://github.com/user-attachments/assets/0db989ef-2d93-436a-aa19-5ac4855f92aa" />
+<img width="600" height="400" alt="Screenshot 4" src="https://github.com/user-attachments/assets/da8db353-d96f-4f78-88ad-3be38aa2c8a5" />
+<img width="600" height="400" alt="Screenshot2" src="https://github.com/user-attachments/assets/684671c9-b2f9-47bd-aec7-272fd274b5de" />
 
 
 A lead-generation website built for a gym to help convert website visitors into potential customers.
