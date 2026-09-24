@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join 1S FIT Society — Say Yes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/join.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<div class="bg-grid"></div>
+<div class="bg-glow-red"></div>
+<div class="bg-glow-blue"></div>
+
+<a href="index.html" class="back-link">Back to Home</a>
+
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="success-overlay">
+  <div class="success-icon">✓</div>
+  <h2 class="success-title">YOU SAID <span class="hl">YES.</span></h2>
+  <div class="success-divider"></div>
+  <p class="success-msg">Welcome to the Society. We've received your details and you'll hear from us within 24 hours to get you started. Your first week is on us.</p>
+  <a href="index.html" class="back-home">Back to Home</a>
+</div>
+
+<!-- MAIN PAGE -->
+<div class="page-wrap">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+    <div class="logo-wrap">
+      <div class="logo-mark">
+        <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="21,2 38,11.5 38,30.5 21,40 4,30.5 4,11.5" fill="none" stroke="#e8002d" stroke-width="1.5"/>
+          <polygon points="21,6 34,13.5 34,28.5 21,36 8,28.5 8,13.5" fill="rgba(232,0,45,0.08)"/>
+          <line x1="10" y1="32" x2="32" y2="10" stroke="#0057ff" stroke-width="1" opacity="0.6"/>
+          <text x="11" y="28" font-family="'Orbitron',monospace" font-size="16" font-weight="900" fill="#ffffff" letter-spacing="-1">1</text>
+          <text x="22" y="28" font-family="'Orbitron',monospace" font-size="14" font-weight="900" fill="#e8002d" letter-spacing="0">S</text>
+          <circle cx="35" cy="9" r="2" fill="#0057ff" opacity="0.8"/>
+        </svg>
+      </div>
+      <div class="logo-text-group">
+        <span class="logo-fit">FIT SOCIETY</span>
+        <span class="logo-society">One. Yes. Always.</span>
+      </div>
+    </div>
+
+    <div class="tag">Your First Step</div>
+    <h1 class="left-title">
+      ONE DECISION<br>
+      CHANGES<br>
+      <span class="hl">EVERYTHING</span>
+    </h1>
+    <p class="left-sub">
+      Fill in your details and we'll reach out within 24 hours. Your first week is completely free — no contract, no commitment. Just results.
+    </p>
+
+    <div class="perks">
+      <div class="perk">
+        <div class="perk-icon">🎯</div>
+        <div class="perk-text">
+          Free First Week
+          <small>No card needed. Walk in, train hard, decide after.</small>
+        </div>
+      </div>
+      <div class="perk">
+        <div class="perk-icon">💪</div>
+        <div class="perk-text">
+          Personal Goal Session
+          <small>Every new member gets a 1-on-1 intake with a coach.</small>
+        </div>
+      </div>
+      <div class="perk">
+        <div class="perk-icon">🔥</div>
+        <div class="perk-text">
+          Instant Community Access
+          <small>WhatsApp group, workout plans & member resources.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL — FORM -->
+  <div class="right-panel">
+
+    <div class="step-bar">
+      <div class="step-dot active" id="sd1"></div>
+      <div class="step-line"></div>
+      <div class="step-dot" id="sd2"></div>
+      <div class="step-line"></div>
+      <div class="step-dot" id="sd3"></div>
+    </div>
+
+    <h2 class="form-heading">JOIN THE SOCIETY</h2>
+    <p class="form-sub">Takes 30 seconds. We'll handle the rest.</p>
+
+    <div class="form-grid" id="lead-form">
+
+      <div class="field-row">
+        <div class="field" id="field-fname">
+          <label for="fname">First Name</label>
+          <div class="field-wrap">
+            <input type="text" id="fname" placeholder="Arjun" autocomplete="given-name"
+              oninput="clearErr('field-fname')" onfocus="stepProgress(1)">
+            <div class="field-bar"></div>
+          </div>
+          <span class="field-error">First name is required</span>
+        </div>
+        <div class="field" id="field-lname">
+          <label for="lname">Last Name</label>
+          <div class="field-wrap">
+            <input type="text" id="lname" placeholder="Sharma" autocomplete="family-name"
+              oninput="clearErr('field-lname')" onfocus="stepProgress(1)">
+            <div class="field-bar"></div>
+          </div>
+          <span class="field-error">Last name is required</span>
+        </div>
+      </div>
+
+      <div class="field" id="field-phone">
+        <label for="phone">Phone Number</label>
+        <div class="field-wrap">
+          <input type="tel" id="phone" placeholder="+91 98765 43210" autocomplete="tel"
+            oninput="clearErr('field-phone')" onfocus="stepProgress(2)">
+          <div class="field-bar"></div>
+        </div>
+        <span class="field-error">Enter a valid phone number</span>
+      </div>
+
+      <div class="field" id="field-email">
+        <label for="email">Email Address</label>
+        <div class="field-wrap">
+          <input type="email" id="email" placeholder="arjun@example.com" autocomplete="email"
+            oninput="clearErr('field-email')" onfocus="stepProgress(2)">
+          <div class="field-bar"></div>
+        </div>
+        <span class="field-error">Enter a valid email address</span>
+      </div>
+
+      <div class="privacy-note">
+        Your details are only used to contact you about your membership. We never share or sell your information.
+      </div>
+
+      <button class="submit-btn" id="submit-btn" onclick="submitForm()">
+        <span id="btn-text">SAY YES — JOIN NOW</span>
+        <div class="spinner" id="spinner"></div>
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/join.js"></script>
+</body>
+</html>
